@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:id="@+id/linearLayoutRootSearchPage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="8dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textViewTitleSearchPage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:gravity="center"
+            android:text="Заголовок"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/linearLayoutRegionSearchPage"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/linearLayoutLabelRegionSearchPage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="18sp"
+            android:gravity="right"
+            android:layout_margin="8dp"
+            android:text="регион: " />
+
+        <Spinner
+            android:id="@+id/spinnerValueRegionSearchPage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:entries="@array/regions"
+            android:layout_margin="8dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayoutSearchFieldSearchPage"
+            android:orientation="horizontal"
+            android:weightSum="4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/editTextUserInputSearchPage"
+                android:layout_weight="3"
+                android:hint="должность..."
+                android:lines="1"
+                android:inputType="text"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/buttonIconStartSearchPage"
+                android:layout_width="45dp"
+                android:layout_height="32dp"
+                android:layout_weight="1"
+                android:background="@drawable/ic_search" />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/textViewFilterSearchPage"
+            android:clickable="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:gravity="center"
+            android:text="Фильтр"
+            android:focusable="true" />
+
+        <Button
+            android:id="@+id/buttonStartSearchPage"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:text="Найти"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</layout>
