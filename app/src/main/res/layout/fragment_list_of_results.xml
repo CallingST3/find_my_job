@@ -9,7 +9,7 @@
             type="com.apps.findmyjob.model.Vacancy" />
         <variable
             name="listener"
-            type="com.apps.findmyjob.ui.VacancyClickListener" />
+            type="com.apps.findmyjob.ui.adapter.VacancyClickListener" />
     </data>
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout

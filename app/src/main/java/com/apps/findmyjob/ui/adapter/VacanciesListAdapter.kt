@@ -1,6 +1,5 @@
-package com.apps.findmyjob.ui
+package com.apps.findmyjob.ui.adapter
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,11 +9,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.apps.findmyjob.R
 import com.apps.findmyjob.databinding.ItemVacancyBinding
 import com.apps.findmyjob.model.VacanciesList
-import com.apps.findmyjob.util.APP_TAG
+import com.apps.findmyjob.ui.ListFragmentDirections
 import kotlinx.android.synthetic.main.item_vacancy.view.*
 
-class VacanciesListAdapter(private val vacanciesList : ArrayList<VacanciesList?>) : RecyclerView.Adapter<VacanciesListAdapter.VacanciesViewHolder>(), VacancyClickListener {
-    
+class VacanciesListAdapter(private val vacanciesList : ArrayList<VacanciesList?>) : RecyclerView.Adapter<VacanciesListAdapter.VacanciesViewHolder>(),
+    VacancyClickListener {
+
     fun updateVacanciesList(newVacanciesList: List<VacanciesList?>) {
         vacanciesList.clear()
         vacanciesList.addAll(newVacanciesList)
@@ -27,7 +27,7 @@ class VacanciesListAdapter(private val vacanciesList : ArrayList<VacanciesList?>
     }
 
     override fun getItemCount(): Int {
-       return vacanciesList.size
+        return vacanciesList.size
     }
 
     override fun onBindViewHolder(holder: VacanciesViewHolder, position: Int) {

@@ -38,6 +38,10 @@ class ApiService {
         return api.getVacancyVyId(companyCode, vacancyId)
     }
 
+    fun getVacanciesFromCompany(companyCode : String) : Single<ResponseFromEndpoint> {
+        return api.getVacanciesFromCompany(companyCode)
+    }
+
     private fun provideLogging() : HttpLoggingInterceptor {
         val logging = HttpLoggingInterceptor()
         logging.level = if (BuildConfig.DEBUG) {

@@ -1,4 +1,4 @@
-package com.apps.findmyjob.ui
+package com.apps.findmyjob.ui.adapter
 
 import android.view.View
 

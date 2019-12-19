@@ -69,6 +69,7 @@ class SearchFragment : Fragment() {
         val action = SearchFragmentDirections.actionSearchFragmentToListOfResultsFragment()
         action.regionId = regionId
         action.userInputText = userInput
+        action.typeOfRequest = 1
         Navigation.findNavController(v).navigate(action)
     }
 

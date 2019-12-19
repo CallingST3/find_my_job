@@ -10,29 +10,30 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.Navigation
 
 import com.apps.findmyjob.R
 import com.apps.findmyjob.databinding.FragmentDetailBinding
 import com.apps.findmyjob.util.APP_TAG
 import com.apps.findmyjob.viewmodel.DetailViewModel
 import kotlinx.android.synthetic.main.fragment_detail.*
-import kotlinx.android.synthetic.main.fragment_list_of_results.*
 import kotlinx.android.synthetic.main.fragment_list_of_results.loadingProgressBar
 import kotlinx.android.synthetic.main.fragment_list_of_results.textViewLoadError
 
-/**
- * Detail job page
- */
 class DetailFragment : Fragment() {
 
     private var vacancyId = ""
     private var companyCode = ""
 
-    private lateinit var dataBinding : FragmentDetailBinding
+    private lateinit var dataBinding: FragmentDetailBinding
 
     private lateinit var viewModel: DetailViewModel
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         dataBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_detail, container, false)
         return dataBinding.root
     }
@@ -59,6 +60,12 @@ class DetailFragment : Fragment() {
 
         observeViewModel()
 
+        textViewCompany.setOnClickListener {
+            val action = DetailFragmentDirections.actionDetailFragmentToListOfResultsFragment()
+            action.typeOfRequest = 2
+            action.companyCode = companyCode
+            Navigation.findNavController(it).navigate(action)
+        }
     }
 
     private fun observeViewModel() {
@@ -69,7 +76,7 @@ class DetailFragment : Fragment() {
                 rootLayout.visibility = View.VISIBLE
             }
         })
-        viewModel.loading.observe(this, Observer {loading ->
+        viewModel.loading.observe(this, Observer { loading ->
             loading?.let {
                 loadingProgressBar.visibility = if (it) View.VISIBLE else View.GONE
                 if (it) {
@@ -83,6 +90,7 @@ class DetailFragment : Fragment() {
                 textViewLoadError.visibility = if (it) View.VISIBLE else View.GONE
             }
         })
+
     }
 
 

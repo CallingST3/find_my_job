@@ -64,7 +64,10 @@ data class Vacancy(
 	@PrimaryKey(autoGenerate = true)
 	var uuid : Int = 0
 
-	fun clearFromHtml(context : String) : String {
-		return Jsoup.parse(context).text()
+	fun clearFromHtml(context : String?) : String? {
+		context?.let {
+			return Jsoup.parse(context).text()
+		}
+		return context
 	}
 }

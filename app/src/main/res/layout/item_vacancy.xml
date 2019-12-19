@@ -9,7 +9,7 @@
 
         <variable
             name="vacancyClickListener"
-            type="com.apps.findmyjob.ui.VacancyClickListener" />
+            type="com.apps.findmyjob.ui.adapter.VacancyClickListener" />
     </data>
 
     <androidx.cardview.widget.CardView

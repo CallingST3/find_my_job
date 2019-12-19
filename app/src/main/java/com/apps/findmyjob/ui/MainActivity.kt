@@ -6,6 +6,7 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
 import com.apps.findmyjob.R
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     
@@ -17,6 +18,12 @@ class MainActivity : AppCompatActivity() {
         
         navController = Navigation.findNavController(this, R.id.navFragment)
         NavigationUI.setupActionBarWithNavController(this, navController)
+
+        bottomNavigation.setOnNavigationItemSelectedListener { item ->
+
+            true
+        }
+
     }
 
     override fun onSupportNavigateUp(): Boolean {

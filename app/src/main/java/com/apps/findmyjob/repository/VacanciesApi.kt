@@ -22,4 +22,7 @@ interface VacanciesApi {
     fun getVacancyVyId(@Path("companyCode") companyCode : String,
                        @Path("vacancyId") vacancyId : String) : Single<ResponseFromEndpoint>
 
+    @GET("vacancies/company/{companyCode}")
+    fun getVacanciesFromCompany(@Path("companyCode") companyCode: String) : Single<ResponseFromEndpoint>
+
 }
