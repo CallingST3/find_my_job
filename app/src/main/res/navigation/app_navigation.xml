@@ -41,9 +41,6 @@
             android:name="companyCode"
             app:argType="string"
             android:defaultValue='""' />
-        <action
-            android:id="@+id/action_listOfResultsFragment_to_action_search"
-            app:destination="@id/action_search" />
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
@@ -67,5 +64,14 @@
         android:name="com.apps.findmyjob.ui.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" />
-    <fragment android:id="@+id/action_search" />
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.apps.findmyjob.ui.FavoriteFragment"
+        android:label="fragment_favorite"
+        tools:layout="@layout/fragment_favorite" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.apps.findmyjob.ui.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
 </navigation>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "841836706489",
+    "firebase_url": "https://findmyjob-f7e69.firebaseio.com",
+    "project_id": "findmyjob-f7e69",
+    "storage_bucket": "findmyjob-f7e69.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:841836706489:android:18554bb738e4f41c21b968",
+        "android_client_info": {
+          "package_name": "com.apps.findmyjob"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "841836706489-65v3p2nu5piv9t87e3qrmt0uo6905acm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.apps.findmyjob",
+            "certificate_hash": "3be5961f97bd0f5053943eb4405a770ea18ee24d"
+          }
+        },
+        {
+          "client_id": "841836706489-snpgpuuh4fhnqfhlu8htlskmkd73263a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxwHgaY3_e_mfY3dtzuMrZQKuk5OEs4ac"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "841836706489-snpgpuuh4fhnqfhlu8htlskmkd73263a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
