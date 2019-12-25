@@ -15,9 +15,6 @@ import com.apps.findmyjob.util.APP_TAG
 import com.apps.findmyjob.util.CitiesMap
 import kotlinx.android.synthetic.main.fragment_search.*
 
-/**
- * Search starting page
- */
 class SearchFragment : Fragment() {
 
     private var userInput : String = ""
@@ -34,7 +31,6 @@ class SearchFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
 
         spinnerValueRegionSearchPage?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {

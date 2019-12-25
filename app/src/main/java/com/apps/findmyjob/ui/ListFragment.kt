@@ -63,15 +63,9 @@ class ListFragment : Fragment() {
             refreshLayout.isRefreshing = false
         }
 
-        when(typeOfRequest) {
-            TYPE_OF_REQUEST_FROM_SEARCH -> {
-                viewModel.refresh(regionId, userInputText, pageOffset, pageLimit, companyCode, typeOfRequest)
-            }
 
-            TYPE_OF_REQUEST_FROM_DETAIL -> {
                 viewModel.refresh(regionId, userInputText, pageOffset, pageLimit, companyCode, typeOfRequest)
-            }
-        }
+
 
 
     }
