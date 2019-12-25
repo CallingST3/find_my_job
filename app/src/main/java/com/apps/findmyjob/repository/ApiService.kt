@@ -30,7 +30,6 @@ class ApiService {
         .create(VacanciesApi::class.java)
     
     fun getVacancies(regionId:String, text : String, offset : String, limit : String) : Single<ResponseFromEndpoint> {
-        Log.d(APP_TAG, "offset=$offset, linit=$limit")
         return api.getVacancies(regionId, text, offset, limit)
     }
 

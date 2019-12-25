@@ -1,10 +1,12 @@
 package com.apps.findmyjob.viewmodel
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.apps.findmyjob.model.ResponseFromEndpoint
 import com.apps.findmyjob.model.VacanciesList
 import com.apps.findmyjob.repository.ApiService
+import com.apps.findmyjob.util.APP_TAG
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.observers.DisposableSingleObserver
@@ -62,8 +64,11 @@ class ListViewModel(application: Application) : BaseViewModel(application) {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeWith(object : DisposableSingleObserver<ResponseFromEndpoint>() {
                     override fun onSuccess(response: ResponseFromEndpoint) {
-                        response.results?.vacancies?.let { list ->
+                        val list = response.results?.vacancies
+                        if (list != null) {
                             vacancyRetrieved(list)
+                        } else {
+                            vacancyEmptyResponseRetrieved()
                         }
                     }
 
@@ -76,8 +81,17 @@ class ListViewModel(application: Application) : BaseViewModel(application) {
         )
     }
 
+
+
     private fun vacancyRetrieved(list: List<VacanciesList?>) {
         vacancies.value = list
+        loadError.value = false
+        loading.value = false
+    }
+
+    private fun vacancyEmptyResponseRetrieved() {
+        Log.d(APP_TAG, "no vacancies")
+        vacancies.value = null
         loadError.value = false
         loading.value = false
     }

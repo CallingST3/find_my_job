@@ -67,7 +67,7 @@
     <fragment
         android:id="@+id/fragment_favorite"
         android:name="com.apps.findmyjob.ui.FavoriteFragment"
-        android:label="Сохраненное"
+        android:label="Избранное"
         tools:layout="@layout/fragment_favorite" />
     <fragment
         android:id="@+id/fragment_profile"

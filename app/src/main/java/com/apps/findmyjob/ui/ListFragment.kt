@@ -63,28 +63,17 @@ class ListFragment : Fragment() {
             refreshLayout.isRefreshing = false
         }
 
-
-                viewModel.refresh(regionId, userInputText, pageOffset, pageLimit, companyCode, typeOfRequest)
-
-
-
+        viewModel.refresh(regionId, userInputText, pageOffset, pageLimit, companyCode, typeOfRequest)
     }
 
     private fun observeViewModel() {
         viewModel.vacancies.observe(this, Observer { list ->
-            list?.let {
-                if (list[0] != null) {
-                    list.let {
-                        Log.d(APP_TAG, "найдено: ${it.size} или более вакансий в городе $regionId")
-                        recyclerViewVacanciesList.visibility = View.VISIBLE
-                        textViewEmptyResponse.visibility = View.GONE
-                        vacanciesListAdapter.updateVacanciesList(it)
-                    }
-
-                } else {
-                    textViewEmptyResponse.visibility = View.VISIBLE
-                    Log.d(APP_TAG, "не найдено записей")
-                }
+            if (list != null && list[0] != null) {
+                    recyclerViewVacanciesList.visibility = View.VISIBLE
+                    textViewEmptyResponse.visibility = View.GONE
+                    vacanciesListAdapter.updateVacanciesList(list)
+            } else {
+                textViewEmptyResponse.visibility = View.VISIBLE
             }
         })
         viewModel.loading.observe(this, Observer { loading ->
