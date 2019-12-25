@@ -7,6 +7,8 @@ import com.apps.findmyjob.model.ResponseFromEndpoint
 import com.apps.findmyjob.model.VacanciesList
 import com.apps.findmyjob.repository.ApiService
 import com.apps.findmyjob.util.APP_TAG
+import com.apps.findmyjob.util.TYPE_OF_REQUEST_FROM_DETAIL
+import com.apps.findmyjob.util.TYPE_OF_REQUEST_FROM_SEARCH
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.observers.DisposableSingleObserver
@@ -25,10 +27,10 @@ class ListViewModel(application: Application) : BaseViewModel(application) {
 
     fun refresh(regionId: String, text: String, offset : String, limit : String, companyCode: String, typeOfRequest : Int) {
         when(typeOfRequest) {
-            1 -> {
+            TYPE_OF_REQUEST_FROM_SEARCH -> {
                 fetchCompaniesFromSearchFromRemote(regionId, text, offset, limit)
             }
-            2 -> {
+            TYPE_OF_REQUEST_FROM_DETAIL -> {
                 fetchCompaniesByCompanyCodeFromRemote(companyCode)
             }
         }

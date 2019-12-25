@@ -1,15 +1,10 @@
 package com.apps.findmyjob.repository
 
-import android.util.Log
 import com.apps.findmyjob.BuildConfig
 import com.apps.findmyjob.model.ResponseFromEndpoint
-import com.apps.findmyjob.model.Vacancy
-import com.apps.findmyjob.util.APP_TAG
-import com.google.gson.GsonBuilder
 import io.reactivex.Single
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
-import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
@@ -17,9 +12,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 class ApiService {
 
     private val BASE_URL = "https://opendata.trudvsem.ru/api/v1/"
-    
-    private val gsonBuilder = GsonBuilder()
-        .excludeFieldsWithoutExposeAnnotation().create()
     
     private val api = Retrofit.Builder()
         .baseUrl(BASE_URL)

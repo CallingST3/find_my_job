@@ -9,9 +9,6 @@ import android.view.ViewGroup
 
 import com.apps.findmyjob.R
 
-/**
- * A simple [Fragment] subclass.
- */
 class SettingsFragment : Fragment() {
 
     override fun onCreateView(
