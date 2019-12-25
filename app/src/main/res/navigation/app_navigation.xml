@@ -3,80 +3,80 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/app_navigation"
-    app:startDestination="@id/searchFragment">
+    app:startDestination="@id/fragment_search">
 
     <fragment
-        android:id="@+id/searchFragment"
+        android:id="@+id/fragment_search"
         android:name="com.apps.findmyjob.ui.SearchFragment"
-        android:label="fragment_search"
-        tools:layout="@layout/fragment_search" >
+        android:label="Поиск вакансий"
+        tools:layout="@layout/fragment_search">
         <action
             android:id="@+id/action_searchFragment_to_listOfResultsFragment"
-            app:destination="@id/listOfResultsFragment" />
+            app:destination="@id/fragment_list_of_results" />
         <action
             android:id="@+id/action_searchFragment_to_settingsFragment"
-            app:destination="@id/settingsFragment" />
+            app:destination="@id/fragment_settings" />
     </fragment>
     <fragment
-        android:id="@+id/listOfResultsFragment"
+        android:id="@+id/fragment_list_of_results"
         android:name="com.apps.findmyjob.ui.ListFragment"
-        android:label="fragment_list_of_results"
-        tools:layout="@layout/fragment_list_of_results" >
+        android:label="Список вакансий"
+        tools:layout="@layout/fragment_list_of_results">
         <action
             android:id="@+id/action_listOfResultsFragment_to_detailFragment"
-            app:destination="@id/detailFragment" />
+            app:destination="@id/fragment_detail" />
         <argument
             android:name="userInputText"
-            app:argType="string"
-            android:defaultValue='""' />
+            android:defaultValue='""'
+            app:argType="string" />
         <argument
             android:name="regionId"
-            app:argType="string"
-            android:defaultValue="77" />
+            android:defaultValue="77"
+            app:argType="string" />
         <argument
             android:name="typeOfRequest"
-            app:argType="integer"
-            android:defaultValue="0" />
+            android:defaultValue="0"
+            app:argType="integer" />
         <argument
             android:name="companyCode"
-            app:argType="string"
-            android:defaultValue='""' />
+            android:defaultValue='""'
+            app:argType="string" />
     </fragment>
     <fragment
-        android:id="@+id/detailFragment"
+        android:id="@+id/fragment_detail"
         android:name="com.apps.findmyjob.ui.DetailFragment"
-        android:label="fragment_detail"
-        tools:layout="@layout/fragment_detail" >
+        android:label="Вакансия"
+        tools:layout="@layout/fragment_detail">
         <action
             android:id="@+id/action_detailFragment_to_listOfResultsFragment"
-            app:destination="@id/listOfResultsFragment" />
+            app:destination="@id/fragment_list_of_results" />
         <argument
             android:name="vacancyId"
-            app:argType="string"
-            android:defaultValue='""' />
+            android:defaultValue='""'
+            app:argType="string" />
         <argument
             android:name="companyCode"
-            app:argType="string"
-            android:defaultValue='""' />
+            android:defaultValue='""'
+            app:argType="string" />
     </fragment>
     <fragment
-        android:id="@+id/settingsFragment"
+        android:id="@+id/fragment_settings"
         android:name="com.apps.findmyjob.ui.SettingsFragment"
-        android:label="fragment_settings"
+        android:label="Настройки"
         tools:layout="@layout/fragment_settings" />
     <fragment
-        android:id="@+id/favoriteFragment"
+        android:id="@+id/fragment_favorite"
         android:name="com.apps.findmyjob.ui.FavoriteFragment"
-        android:label="fragment_favorite"
+        android:label="Сохраненное"
         tools:layout="@layout/fragment_favorite" />
     <fragment
-        android:id="@+id/profileFragment"
+        android:id="@+id/fragment_profile"
         android:name="com.apps.findmyjob.ui.ProfileFragment"
-        android:label="fragment_profile"
+        android:label="Профиль"
         tools:layout="@layout/fragment_profile" />
     <fragment
-        android:id="@+id/loginFragment"
+        android:id="@+id/fragment_login"
         android:name="com.apps.findmyjob.ui.LoginFragment"
-        android:label="fragment_login"
+        android:label="Логин\регистрация"
         tools:layout="@layout/fragment_login" />
 </navigation>

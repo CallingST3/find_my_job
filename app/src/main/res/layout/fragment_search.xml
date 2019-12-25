@@ -14,9 +14,9 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:gravity="center"
-            android:text="Заголовок"
+            android:text="Поиск вакансий"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="16sp"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
         <LinearLayout
@@ -75,16 +75,6 @@
 
         </LinearLayout>
 
-
-        <TextView
-            android:id="@+id/textViewFilterSearchPage"
-            android:clickable="true"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:gravity="center"
-            android:text="Фильтр"
-            android:focusable="true" />
 
         <Button
             android:id="@+id/buttonStartSearchPage"

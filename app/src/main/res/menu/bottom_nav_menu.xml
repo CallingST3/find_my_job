@@ -3,21 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/searchFragment"
+        android:id="@+id/fragment_search"
         android:enabled="true"
         android:title="Поиск"
         android:icon="@drawable/ic_action_search"
         app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/favoriteFragment"
+        android:id="@+id/fragment_favorite"
         android:enabled="true"
         android:title="Избранное"
         android:icon="@drawable/ic_action_favorite"
         app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/profileFragment"
+        android:id="@+id/fragment_profile"
         android:enabled="true"
         android:title="Профиль"
         android:icon="@drawable/ic_action_account"
