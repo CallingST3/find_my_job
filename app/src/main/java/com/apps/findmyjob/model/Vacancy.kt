@@ -2,8 +2,11 @@ package com.apps.findmyjob.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.apps.findmyjob.util.FULL_DATA_FORMAT_PATTERN
 import com.google.gson.annotations.SerializedName
 import org.jsoup.Jsoup
+import java.text.SimpleDateFormat
+import java.util.*
 
 data class Vacancy(
 
@@ -59,7 +62,10 @@ data class Vacancy(
 	val region: Region? = null,
 
 	@field:SerializedName("category")
-	val category: Category? = null
+	val category: Category? = null,
+
+	@field:SerializedName("term")
+	val term: Term? = null
 ) {
 	@PrimaryKey(autoGenerate = true)
 	var uuid : Int = 0
@@ -70,4 +76,26 @@ data class Vacancy(
 		}
 		return context
 	}
+
+	fun getDateTime():String {
+		val inputFormat = SimpleDateFormat(FULL_DATA_FORMAT_PATTERN, Locale.getDefault())
+		val date = Date()
+		return inputFormat.format(date.time)
+	}
+
+	fun formatEducationExperience(experience : String) : String {
+		return when(experience) {
+			"1" -> "1 год"
+			"2", "3", "4" -> "2 года"
+			else -> "$experience лет"
+		}
+	}
+
+	fun returnIfNotNull(string : String?) : String {
+		string?.let {
+			return string
+		}
+		return "не указано"
+	}
+
 }

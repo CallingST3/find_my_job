@@ -3,6 +3,18 @@
 
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="duty">Обязанности:</string>
+    <string name="requirement">Требования:</string>
+    <string name="education">Образование:</string>
+    <string name="experience">Опыт работы:</string>
+    <string name="error_while_loading_data">Ошибка во время загрузки данных</string>
+    <string name="error_while_loading_data_internet">Ошибка во время загрузки данных. Проверьте интернет подключение.</string>
+    <string name="empty_response">По вашему запросу вакансий не обнаружено.</string>
+    <string name="in_progress">in progress</string>
+    <string name="vacancies_search">Поиск вакансий</string>
+    <string name="region">регион:</string>
+    <string name="job_name">должность…</string>
+    <string name="find">Найти</string>
 
     <array name="regions">
         <item>Москва</item>

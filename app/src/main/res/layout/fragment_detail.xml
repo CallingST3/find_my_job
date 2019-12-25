@@ -33,16 +33,13 @@
                 <TextView
                     android:id="@+id/textViewVacancyName"
                     style="@style/Accent"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginTop="10dp"
+                    android:textSize="20sp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    tools:text="Повар"
                     android:text="@{vacancy.clearFromHtml(vacancy.jobName)}" />
-
-                <TextView
-                    android:id="@+id/textViewSalary"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@{vacancy.clearFromHtml(vacancy.salary)}" />
 
                 <TextView
                     android:id="@+id/textViewCompany"
@@ -50,87 +47,148 @@
                     android:layout_height="wrap_content"
                     android:clickable="true"
                     android:textColor="@color/colorPrimary"
+                    tools:text="Общество с ограниченной ответственностью Вара"
                     android:text="@{vacancy.clearFromHtml(vacancy.company.name)}"
                     android:focusable="true" />
+
+                <TextView
+                    android:id="@+id/textViewSalary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:padding="8dp"
+                    android:textSize="16sp"
+                    tools:text="от 37000 до 37000 р."
+                    android:text="@{vacancy.clearFromHtml(vacancy.salary)+ ` р.`}" />
+
+                <TextView
+                    android:id="@+id/textViewLastEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="Создано 04.12.2019"
+                    android:text="@{`Создано ` + vacancy.creationDate}"/>
+
+                <TextView
+                    android:id="@+id/textViewSource"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="Вакансия службы занятости"
+                    android:text="@{vacancy.source}" />
+
+                <TextView
+                    android:id="@+id/textViewLabelAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/Accent"
+                    android:text="Адрес места работы" />
 
                 <TextView
                     android:id="@+id/textViewAddress"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    tools:text="г. Москва Никольская 2"
                     android:text="@{vacancy.clearFromHtml(vacancy.addresses.address.get(0).location)}" />
+
+                <TextView
+                    android:id="@+id/textViewLabelVacancyInfo"
+                    style="@style/Accent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Данные по вакансии"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewSchedule"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="ваши обязанности"
+                    android:text="@{`График работы: ` + vacancy.schedule}" />
+
+                <TextView
+                    android:id="@+id/textViewEmployment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="ваши обязанности"
+                    android:text="@{`Тип занятости: ` + vacancy.employment}" />
+
+                <TextView
+                    android:id="@+id/textViewLabelPayment"
+                    style="@style/Accent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Премии и бонусы"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewLabelAdditionalPayment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Дополнительные бонусы: " />
+
+                <TextView
+                    android:id="@+id/textViewAdditionalPayment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{vacancy.clearFromHtml(vacancy.term.term)}" />
+
+                <TextView
+                    android:id="@+id/textViewLabelContacts"
+                    style="@style/Accent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Контактная информация"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewContactPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="Телефон"
+                    android:text="@{`Телефон: ` + vacancy.returnIfNotNull(vacancy.company.phone)}" />
+
+                <TextView
+                    android:id="@+id/textViewContactEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="Email"
+                    android:text="@{`Эл. почта: ` + vacancy.returnIfNotNull(vacancy.company.email)}" />
 
                 <TextView
                     android:id="@+id/textViewLabelDuty"
                     style="@style/Accent"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Обязанности: "
+                    android:text="Должностные обязанности"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/textViewDuty"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    tools:text="Обязанности"
                     android:text="@{vacancy.clearFromHtml(vacancy.duty)}" />
 
                 <TextView
-                    android:id="@+id/textViewLabelRequirement"
+                    android:id="@+id/textViewLabelRequirements"
                     style="@style/Accent"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Требования: "
+                    android:text="Требования к кандидату"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/textViewRequirement"
+                    android:id="@+id/textViewLabelEducationExperience"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@{vacancy.clearFromHtml(vacancy.requirement.qualification)}" />
-                    <!--android:text="@{vacancy.requirement.qualification}" />-->
+                    tools:text="Опыт работы"
+                    android:text="@{`Опыт работы: ` + vacancy.formatEducationExperience(vacancy.requirement.experience)}" />
 
-                <LinearLayout
+                <TextView
+                    android:id="@+id/textViewLabelRequirementsEducation"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:weightSum="2">
-
-                    <TextView
-                        android:id="@+id/textViewLabelEducation"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Образование: " />
-
-                    <TextView
-                        android:id="@+id/textViewEducation"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="@{vacancy.clearFromHtml(vacancy.requirement.education)}" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:weightSum="2">
-
-                    <TextView
-                        android:id="@+id/textViewLabelExperience"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Опыт работы: " />
-
-                    <TextView
-                        android:id="@+id/textViewExperience"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="@{vacancy.clearFromHtml(vacancy.requirement.experience)}" />
-
-                </LinearLayout>
+                    tools:text="Образование"
+                    android:text="@{`Образование: ` + vacancy.requirement.education}" />
 
             </LinearLayout>
 
@@ -140,7 +198,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Ошибка во время загрузки данных"
+                android:text="@string/error_while_loading_data"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

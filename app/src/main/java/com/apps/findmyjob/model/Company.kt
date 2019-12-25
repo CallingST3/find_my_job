@@ -26,5 +26,8 @@ data class Company(
 	val email: String? = null,
 
 	@field:SerializedName("url")
-	val url: String? = null
+	val url: String? = null,
+
+	@field:SerializedName("phone")
+	val phone: String? = null
 )

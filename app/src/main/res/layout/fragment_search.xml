@@ -14,7 +14,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:gravity="center"
-            android:text="Поиск вакансий"
+            android:text="@string/vacancies_search"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -33,9 +33,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textSize="18sp"
-            android:gravity="right"
+            android:gravity="end"
             android:layout_margin="8dp"
-            android:text="регион: " />
+            android:text="@string/region" />
 
         <Spinner
             android:id="@+id/spinnerValueRegionSearchPage"
@@ -57,7 +57,7 @@
             <EditText
                 android:id="@+id/editTextUserInputSearchPage"
                 android:layout_weight="3"
-                android:hint="должность..."
+                android:hint="@string/job_name"
                 android:lines="1"
                 android:inputType="text"
                 android:singleLine="true"
@@ -83,7 +83,7 @@
             android:background="@color/colorPrimaryDark"
             android:textColor="#fff"
             android:textStyle="bold"
-            android:text="Найти"
+            android:text="@string/find"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
