@@ -51,6 +51,7 @@ dependencies {
 
     implementation "androidx.room:room-runtime:$roomVersion"
     implementation "androidx.legacy:legacy-support-v4:1.0.0"
+    implementation 'com.google.firebase:firebase-database:16.0.4'
     kapt "androidx.room:room-compiler:$roomVersion"
     implementation "androidx.room:room-ktx:$roomVersion"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.1.1"

@@ -101,14 +101,14 @@
                     android:id="@+id/textViewSchedule"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    tools:text="ваши обязанности"
+                    tools:text="График работы"
                     android:text="@{`График работы: ` + vacancy.schedule}" />
 
                 <TextView
                     android:id="@+id/textViewEmployment"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    tools:text="ваши обязанности"
+                    tools:text="Тип занятости"
                     android:text="@{`Тип занятости: ` + vacancy.employment}" />
 
                 <TextView

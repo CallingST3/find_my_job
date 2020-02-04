@@ -6,6 +6,9 @@ import com.apps.findmyjob.util.FULL_DATA_FORMAT_PATTERN
 import com.google.gson.annotations.SerializedName
 import org.jsoup.Jsoup
 import java.text.SimpleDateFormat
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+import java.time.format.FormatStyle
 import java.util.*
 
 data class Vacancy(
@@ -77,16 +80,12 @@ data class Vacancy(
 		return context
 	}
 
-	fun getDateTime():String {
-		val inputFormat = SimpleDateFormat(FULL_DATA_FORMAT_PATTERN, Locale.getDefault())
-		val date = Date()
-		return inputFormat.format(date.time)
-	}
+
 
 	fun formatEducationExperience(experience : String) : String {
 		return when(experience) {
-			"1" -> "1 год"
-			"2", "3", "4" -> "2 года"
+			"1" -> "$experience год"
+			"2", "3", "4" -> "$experience года"
 			else -> "$experience лет"
 		}
 	}
